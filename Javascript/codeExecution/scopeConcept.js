@@ -16,8 +16,5 @@ z();
 function solve( str, substr) {
     lowerStr = str.toLowerCase();
     lowerSubStr = substr.toLowerCase();
-    // return lowerStr.indexOf(lowerSubStr);
-    for(let i =0; i<str.length; i++) {
-        str.subString(lowerSubStr);
-    }
+    return lowerStr.indexOf(lowerSubStr);
 }
