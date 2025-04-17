@@ -90,3 +90,29 @@ while(98 >= 90) {
 
 }
 // result = DCCXC, num = `8
+
+// ---------------------------------------------------------------
+
+// var a = 50;
+// {
+//     // a = 100;
+//     console.log(a);
+// }
+// console.log(a);
+
+
+// -------------------------------------------------------
+// Scope 
+
+function a() {
+    var b = 10;
+    c();
+    function c() {
+        console.log(b);
+    }
+}
+
+a();
+console.log(b);
+
+//Scope is where we can access a variabe or a function in our code
