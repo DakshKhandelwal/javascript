@@ -2,7 +2,7 @@ body {
     background-color: gray;
 }
 
-h1 {
+/* h1 {
     color: yellow;
     background-color: red;
 }
@@ -10,4 +10,13 @@ h1 {
 button {
     background-color: pink;
     color: bisque;
+} */
+
+.box {
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: aqua;
 }
