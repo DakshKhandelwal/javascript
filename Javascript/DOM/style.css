@@ -1,6 +1,6 @@
-body {
+/* body {
     background-color: gray;
-}
+} */
 
 /* h1 {
     color: yellow;
@@ -12,11 +12,20 @@ button {
     color: bisque;
 } */
 
-.box {
+/* .box {
     height: 100px;
     width: 100px;
     margin: 5px;
     border: 1px solid black;
     text-align: center;
     background-color: aqua;
+} */
+
+.para {
+    color: blue;
+}
+
+
+.newClass {
+    background-color: yellow;
 }

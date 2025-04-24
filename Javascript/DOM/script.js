@@ -161,11 +161,18 @@ let myButton3 = document.querySelectorAll(".myClass");  //all matching elements 
 // Question: Create a new button. Give it a text "click me", backgroundcolor of red and text color as white . 
 // Insert the button as first element inside the body tag.
 
-let myButton5 = document.createElement("button");
-myButton5.innerText = "click me";
-myButton5.style.backgroundColor = "red";
-myButton5.style.color = "white";
+// let myButton5 = document.createElement("button");
+// myButton5.innerText = "click me";
+// myButton5.style.backgroundColor = "red";
+// myButton5.style.color = "white";
 
-console.log(myButton5);
+// console.log(myButton5);
 
-document.querySelector("body").prepend(myButton5);
+// document.querySelector("body").prepend(myButton5);
+
+// ---------------------------------------------------
+// Question: Create a <p> tag in html, give it a class & some styling. 
+// Now create a new class in CSS and try to append this class to the <p> element.
+// Hint: use classList 
+
+let myPara = document.querySelector("p");
