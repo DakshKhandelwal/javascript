@@ -172,52 +172,171 @@
 // })
 
 
-function asyncFunction1() {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve("success1");
-            // reject("error123")
-        }, 5000)
-    }) 
-}
+// function asyncFunction1() {
+//     return new Promise ((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("success1");
+//             // reject("error123")
+//         }, 5000)
+//     }) 
+// }
 
-function asyncFunction2() {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve("success2");
-            // reject("error123")
-        }, 5000)
-    }) 
-}
+// function asyncFunction2() {
+//     return new Promise ((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("success2");
+//             // reject("error123")
+//         }, 5000)
+//     }) 
+// }
 
-function asyncFunction3() {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve("success3");
-            // reject("error123")
-        }, 5000)
-    }) 
-}
+// function asyncFunction3() {
+//     return new Promise ((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("success3");
+//             // reject("error123")
+//         }, 5000)
+//     }) 
+// }
 
-console.log("fetching data1...");
-let p1 = asyncFunction1();
+// console.log("fetching data1...");
+// let p1 = asyncFunction1();
 
-p1.then((res) => {
-    console.log(res);
-    console.log("fetching data 2");
-    asyncFunction2().then((res) => {
-        console.log(res);
-        console.log("fetching data 3");
-        asyncFunction3().then( (res) => {
-            console.log(res)
-        })
-    })
-})
+// p1.then((res) => {
+//     console.log(res);
+//     console.log("fetching data 2");
+//     asyncFunction2().then((res) => {
+//         console.log(res);
+//         console.log("fetching data 3");
+//         asyncFunction3().then( (res) => {
+//             console.log(res)
+//         })
+//     })
+// })
 
 // console.log("fetching data2...");
 // let p2 = asyncFunction2();
 // p2.then((res) => {
 //     console.log(res)
 // })
-
+// ----------------------------------------------------------------
 //Promise chain
+
+// function getData( dataId) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log("data", dataId);
+//             resolve("success");
+//             // reject("error")
+//         }, 2000)
+//     })
+// }
+
+// getData(1).then((res) => {
+//     console.log(res);
+//     getData(2).then((res) => {
+//         console.log(res);
+//     })
+// })
+
+// getData(1)
+//     .then((res) => {
+//         console.log("getting data 2");
+//         return getData(2);
+//     })
+//     .then((res) => {
+//         console.log("getting data 3");
+//         return getData(3);
+//     })
+//     .then((res) => {
+//         console.log("success");
+//     })
+
+// -------------------------------------------------------------------
+// Async Await 
+
+// async function hello() {
+//     console.log("world");
+// }
+
+// async function always returns a promise 
+
+// async function myFunction() { ... }
+
+// await pause the execution of its surrounding async function until promise is settled. 
+//await is used inside the async function
+
+// function callingAPI() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log("weather in mumbai is good");
+//             resolve("success");
+//         }, 6000)
+//     })
+// }
+
+// await callingAPI();  //Can't use it like this, should use inside async function
+// async function getWeatherData() {
+//     console.log("My name is Daksh");
+//     await callingAPI();
+//     console.log("I live in jaipur");
+// }
+
+function getData( dataId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // console.log("data", dataId);
+            resolve("success");
+            // reject("error")
+        }, 1000)
+    })
+}
+function getData2( dataId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // console.log("data", dataId);
+            resolve("success");
+            // reject("error")
+        }, 1000)
+    })
+}
+function getData3( dataId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // console.log("data", dataId);
+            // resolve("success");
+            reject("error")
+        }, 1000)
+    })
+}
+function getData4( dataId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // console.log("data", dataId);
+            resolve("success");
+            // reject("error")
+        }, 1000)
+    })
+}
+
+// Async-await 
+(async function () {
+    try {
+        console.log("getting data 1");
+        await getData(1);
+        console.log("getting data 2");
+        await getData2(2);
+        console.log("getting data 3");
+        await getData3(3);
+        console.log("getting data 4");
+        await getData4(4);
+    }
+    catch(err) {
+        console.log("something went wrorng",err);
+    }
+}) ()
+
+// console.log("Last line");
+//IIFE : Immediately Invoked Function Expression
+
+// (function)()
